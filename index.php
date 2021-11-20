@@ -15,7 +15,7 @@
     /*  include top sale section */
 
     /*  include special price section  */
-         include ('Template/_special-price.php');
+        include ('Template/_special-price.php');
     /*  include special price section  */
 
     /*  include banner ads  */
@@ -27,7 +27,7 @@
     /*  include new phones section  */
 
     /*  include blog area  */
-         include ('Template/_blogs.php');
+        include ('Template/_blogs.php');
     /*  include blog area  */
 
 ?>

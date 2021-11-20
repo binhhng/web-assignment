@@ -132,5 +132,24 @@ $(document).ready(function(){
             }}); // closing ajax request
     }); // closing qty down button
 
-
+    //Send Feedback
+    $('#btnFeedback').click(function(e){  
+        var email = $('#email').val();
+        var content = $('#content').val();
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url:'feedback.php',
+            dataType: "json",
+            data: {"email":email, "content":content},
+            success:function(data){
+                //validating data output from server
+                if (data.emailErr) $('#emailErr').html('*'+data.emailErr);
+                else $('#emailErr').empty();
+                if (data.code=='200') {
+                    alert(data.alert);
+                }
+            }
+        });
+    });
 });
