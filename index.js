@@ -148,6 +148,8 @@ $(document).ready(function(){
                 else $('#emailErr').empty();
                 if (data.code=='200') {
                     alert(data.alert);
+                    $('#email').val('');
+                    $('#content').val('');
                 }
             }
         });
