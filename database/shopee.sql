@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 20, 2020 at 11:01 AM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.1.33
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 24, 2021 lúc 01:50 PM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `shopee`
+-- Cơ sở dữ liệu: `shopee`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Cấu trúc bảng cho bảng `cart`
 --
 
 CREATE TABLE `cart` (
@@ -37,7 +36,34 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Cấu trúc bảng cho bảng `feedbacks`
+--
+
+CREATE TABLE `feedbacks` (
+  `email` text NOT NULL,
+  `content` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `feedbacks`
+--
+
+INSERT INTO `feedbacks` (`email`, `content`) VALUES
+('admin1@example.com', 'ádasdas'),
+('asdasdsfa@gmail.com', 'adadac vtx'),
+('admin1@example.com', 'sadas'),
+('admin1@example.com', 'adasa'),
+('asdasdsfa@gmail.com', 'asdas'),
+('admin1@example.com', 'ádasd'),
+('xuanvu12a2ald@gmail.com', 'ádasda'),
+('admin1@example.com', 'ưqeqwe'),
+('admin1@example.com', 'ads'),
+('vu.phanbachkhoa@hcmut.edu.vn', 'ád');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `product`
 --
 
 CREATE TABLE `product` (
@@ -50,11 +76,10 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `product`
+-- Đang đổ dữ liệu cho bảng `product`
 --
 
 INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item_image`, `item_register`) VALUES
-(1, 'Samsung', 'Samsung Galaxy 10', 152.00, './assets/products/1.png', '2020-03-28 11:08:57'), -- NOW()
 (2, 'Redmi', 'Redmi Note 7', 122.00, './assets/products/2.png', '2020-03-28 11:08:57'),
 (3, 'Redmi', 'Redmi Note 6', 122.00, './assets/products/3.png', '2020-03-28 11:08:57'),
 (4, 'Redmi', 'Redmi Note 5', 122.00, './assets/products/4.png', '2020-03-28 11:08:57'),
@@ -63,7 +88,6 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 (7, 'Redmi', 'Redmi Note 9', 122.00, './assets/products/8.png', '2020-03-28 11:08:57'),
 (8, 'Redmi', 'Redmi Note', 122.00, './assets/products/10.png', '2020-03-28 11:08:57'),
 (9, 'Samsung', 'Samsung Galaxy S6', 152.00, './assets/products/11.png', '2020-03-28 11:08:57'),
-(10, 'Samsung', 'Samsung Galaxy S7', 152.00, './assets/products/12.png', '2020-03-28 11:08:57'),
 (11, 'Apple', 'Apple iPhone 5', 152.00, './assets/products/13.png', '2020-03-28 11:08:57'),
 (12, 'Apple', 'Apple iPhone 6', 152.00, './assets/products/14.png', '2020-03-28 11:08:57'),
 (13, 'Apple', 'Apple iPhone 7', 152.00, './assets/products/15.png', '2020-03-28 11:08:57');
@@ -71,28 +95,20 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Cấu trúc bảng cho bảng `register`
 --
 
-CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL,
-  `first_name` varchar(100) NOT NULL,
-  `last_name` varchar(100) NOT NULL,
-  `register_date` datetime DEFAULT NULL
+CREATE TABLE `register` (
+  `ID` int(11) NOT NULL,
+  `FULL_NAME` varchar(255) DEFAULT NULL,
+  `EMAIL` varchar(150) DEFAULT NULL,
+  `PASSWORD` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`user_id`, `first_name`, `last_name`, `register_date`) VALUES
-(1, 'Daily', 'Tuition', '2020-03-28 13:07:17'),
-(2, 'Akshay', 'Kashyap', '2020-03-28 13:07:17');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wishlist`
+-- Cấu trúc bảng cho bảng `wishlist`
 --
 
 CREATE TABLE `wishlist` (
@@ -102,56 +118,50 @@ CREATE TABLE `wishlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `cart`
+-- Chỉ mục cho bảng `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`);
 
 --
--- Indexes for table `product`
+-- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`item_id`);
 
 --
--- Indexes for table `user`
+-- Chỉ mục cho bảng `register`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
+ALTER TABLE `register`
+  ADD PRIMARY KEY (`ID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
   MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT cho bảng `register`
 --
-ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `register`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-/*Feedback*/
-CREATE TABLE `feedbacks` ( 
-  `email` TEXT NOT NULL , 
-  `content` TEXT NOT NULL 
-) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4;

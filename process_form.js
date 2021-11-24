@@ -1,0 +1,25 @@
+var regisElement = document.querySelector("#register");
+var loginElement = document.querySelector("#login");
+var form_1 = document.querySelector("#form-1");
+var form_2 = document.querySelector("#form-2");
+var overlay = document.querySelector(".overlay");
+
+regisElement.onclick = function() {
+    form_1.classList.add('visible');
+    overlay.classList.add('visible');
+}
+loginElement.onclick = function() {
+    form_2.classList.add('visible');
+    overlay.classList.add('visible');
+}
+overlay.onclick = function() {
+    if (form_1.classList.contains('visible')) {
+        form_1.classList.remove('visible');
+    }
+    if (form_2.classList.contains('visible')) {
+        form_2.classList.remove('visible');
+    }
+    if (overlay.classList.contains('visible')) {
+        overlay.classList.remove('visible');
+    }
+}

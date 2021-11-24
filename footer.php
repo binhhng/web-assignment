@@ -119,9 +119,6 @@
         </div>
     </div>
 </footer>
-<div class="copyright text-center bg-dark text-white py-2">
-    <p class="font-rale font-size-14">&copy; Copyrights 2021. Designed By <span class="color-second">KSTN Team</span></p>
-</div>
 <!-- !start #footer -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
