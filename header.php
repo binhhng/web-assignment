@@ -29,10 +29,11 @@
 <header id="header">
     <div class="strip d-flex justify-content-end px-4 py-1 bg-light">
         <!-- <p class="font-rale font-size-12 text-black-50 m-0">Jordan Calderon 430-985 Eleifend St. Duluth Washington 92611 (427) 930-5255</p> -->
-        <div class="font-rale font-size-14">
-          <button href="#" id="login" class="px-3 border-right text-dark">Login</button>
-          <button href="#" id="register" class="px-3 border-right border-left text-dark">Sign up</button>
-          <button href="#" id="logout" class="px-3 border-right border-left text-dark">Logout</button>
+        <div style="display:flex" class="font-rale font-size-14">
+          <div class="username px-3 border-right"></div>
+          <button href="#" class="login px-3 border-right text-dark">Login</button>
+          <button href="#" class="register px-3 border-right border-left text-dark">Sign up</button>
+          <button href="#" class="logout px-3 border-right border-left text-dark">Logout</button>
           <!-- <a href="#"  class="px-3 border-right text-dark">Whishlist (0)</a> -->
         </div>
     </div>
@@ -135,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (overlay.classList.contains('visible')) {
                         overlay.classList.remove('visible');
                     }
+                   
                 }
                 else {
                       alert(data.alert);
@@ -169,13 +171,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (data.code == '200') {
                         alert(data.alert);
                         $('#login-email').val('');
-                       $('#login-password').val('');
+                        $('#login-password').val('');
                         if (form_2.classList.contains('visible')) {
                             form_2.classList.remove('visible');
                         }
                         if (overlay.classList.contains('visible')) {
                             overlay.classList.remove('visible');
                         }
+                        var btnRegis = document.querySelector(".register");
+                        var btnLogin = document.querySelector(".login");
+                        var btnLogout = document.querySelector(".logout");
+                        var btnUser = document.querySelector(".username");
+                        btnRegis.classList.add('hide');
+                        btnLogin.classList.add('hide');
+                        btnLogout.classList.add('visible');
+                        btnUser.innerText= data.fullname;
+                       
                     }
                     else {
                       alert(data.alert);

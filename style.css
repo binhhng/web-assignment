@@ -441,12 +441,25 @@ html {
     margin-top: 36px;
 }
 
+.login,
+.register,
+.logout {
+    border: none;
+}
+
+.logout {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
 .visible {
     display: block;
 }
 
-#login,
-#register,
-#logout {
-    border: none;
+.username {
+    color: rgb(158, 56, 38);
+    font-size: 16px;
 }
