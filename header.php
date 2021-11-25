@@ -182,6 +182,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         var btnLogin = document.querySelector(".login");
                         var btnLogout = document.querySelector(".logout");
                         var btnUser = document.querySelector(".username");
+                        btnRegis.classList.remove('visible');
+                        btnLogin.classList.remove('visible');
                         btnRegis.classList.add('hide');
                         btnLogin.classList.add('hide');
                         btnLogout.classList.add('visible');

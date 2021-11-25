@@ -38,6 +38,8 @@ btnLogout.onclick = function() {
                 var btnLogin = document.querySelector(".login");
                 var btnLogout = document.querySelector(".logout");
                 var btnUser = document.querySelector(".username");
+                btnRegis.classList.remove('hide');
+                btnLogin.classList.remove('hide');
                 btnRegis.classList.add('visible');
                 btnLogin.classList.add('visible');
                 btnLogout.classList.remove('visible');

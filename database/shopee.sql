@@ -102,7 +102,7 @@ CREATE TABLE `register` (
   `ID` int(11) NOT NULL,
   `FULL_NAME` varchar(255) DEFAULT NULL,
   `EMAIL` varchar(150) DEFAULT NULL,
-  `PASSWORD` varchar(255) DEFAULT NULL
+  `PASS_WORD` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
