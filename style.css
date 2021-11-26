@@ -463,3 +463,16 @@ html {
     color: rgb(158, 56, 38);
     font-size: 16px;
 }
+
+@media screen and (max-width: 992px) {
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+}
+
+.navbar-collapse {
+    height: auto!important;
+}
