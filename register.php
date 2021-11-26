@@ -31,7 +31,7 @@ if ($con->connect_error) {
          $alert = "Email đã được sử dụng !!!"; 
     } 
     else {
-      $sql = "INSERT INTO register (FULL_NAME, EMAIL, PASSWORD)
+      $sql = "INSERT INTO register (FULL_NAME, EMAIL, PASS_WORD)
       VALUES ('$fullname','$email', '$password')";
               if ($con->query($sql) === TRUE) {
                   $alert = "Đăng ký thành công, đăng nhập ngay thôi nào !!!";
