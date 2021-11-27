@@ -26,77 +26,64 @@
 </head>
 <body>
 <!-- start #header -->
-<header id="header">
-    <div class="strip d-flex justify-content-end px-4 py-1 bg-light">
-        <!-- <p class="font-rale font-size-12 text-black-50 m-0">Jordan Calderon 430-985 Eleifend St. Duluth Washington 92611 (427) 930-5255</p> -->
-        <div style="display:flex" class="font-rale font-size-14">
-          <div class="username px-3 border-right"></div>
-          <button href="#" class="login px-3 border-right text-dark">Login</button>
-          <button href="#" class="register px-3 border-right border-left text-dark">Sign up</button>
-          <button href="#" class="logout px-3 border-right border-left text-dark">Logout</button>
-          <!-- <a href="#"  class="px-3 border-right text-dark">Whishlist (0)</a> -->
-        </div>
-    </div>
+<header id="header" style="height: 30px;">
     <div class="overlay "></div>
     <form class="form " id="form-1">
-  <h3 class="heading">Đăng ký thành viên</h3>
-  <p class="desc">Mua sắm thả ga tại Mobile Shopee ❤️</p>
+      <h3 class="heading">Đăng ký thành viên</h3>
+      <p class="desc">Mua sắm thả ga tại Mobile Shopee ❤️</p>
 
-  <div class="spacer"></div>
+      <div class="spacer"></div>
 
-  <div class="form-group">
-    <label for="fullname" class="form-label">Tên đầy đủ</label>
-    <input id="fullname" name="fullname" type="text" placeholder="VD: Vũ Phan" class="form-control">
-    <span class="form-message"></span>
-  </div>
+      <div class="form-group">
+        <label for="fullname" class="form-label">Tên đầy đủ</label>
+        <input id="fullname" name="fullname" type="text" placeholder="VD: Vũ Phan" class="form-control">
+        <span class="form-message"></span>
+      </div>
 
-  <div class="form-group">
-    <label for="register-email" class="form-label">Email</label>
-    <input id="register-email" name="register-email" type="text" placeholder="VD: email@domain.com" class="form-control">
-    <span class="form-message"></span>
-  </div>
+      <div class="form-group">
+        <label for="register-email" class="form-label">Email</label>
+        <input id="register-email" name="register-email" type="text" placeholder="VD: email@domain.com" class="form-control">
+        <span class="form-message"></span>
+      </div>
 
-  <div class="form-group">
-    <label for="register-password" class="form-label">Mật khẩu</label>
-    <input id="register-password" name="register-password" type="password" placeholder="Nhập mật khẩu" class="form-control">
-    <span class="form-message"></span>
-  </div>
+      <div class="form-group">
+        <label for="register-password" class="form-label">Mật khẩu</label>
+        <input id="register-password" name="register-password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+        <span class="form-message"></span>
+      </div>
 
-  <div class="form-group">
-    <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
-    <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu" type="password" class="form-control">
-    <span class="form-message"></span>
-  </div>
+      <div class="form-group">
+        <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
+        <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu" type="password" class="form-control">
+        <span class="form-message"></span>
+      </div>
 
-  <button id= "register-submit" type="submit" class="form-submit">Đăng ký</button>
-</form>
+      <button id= "register-submit" type="submit" class="form-submit">Đăng ký</button>
+    </form>
 
-<form class="form " id="form-2">
-  <h3 class="heading">Đăng nhập</h3>
-  <p class="desc">Mua sắm thả ga tại Mobile Shopee ❤️</p>
+    <form class="form " id="form-2">
+      <h3 class="heading">Đăng nhập</h3>
+      <p class="desc">Mua sắm thả ga tại Mobile Shopee ❤️</p>
 
-  <div class="spacer"></div>
+      <div class="spacer"></div>
 
-  <div class="form-group">
-    <label for="login-email" class="form-label">Email</label>
-    <input id="login-email" name="login-email" type="text" placeholder="VD: email@domain.com" class="form-control">
-    <span class="form-message"></span>
-  </div>
+      <div class="form-group">
+        <label for="login-email" class="form-label">Email</label>
+        <input id="login-email" name="login-email" type="text" placeholder="VD: email@domain.com" class="form-control">
+        <span class="form-message"></span>
+      </div>
 
-  <div class="form-group">
-    <label for="login-password" class="form-label">Mật khẩu</label>
-    <input id="login-password" name="login-password" type="password" placeholder="Nhập mật khẩu" class="form-control">
-    <span class="form-message"></span>
-  </div>
-  
-  <button id= "login-submit" type="submit" class="form-submit">Đăng nhập</button>
-</form>
+      <div class="form-group">
+        <label for="login-password" class="form-label">Mật khẩu</label>
+        <input id="login-password" name="login-password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+        <span class="form-message"></span>
+      </div>
+      
+      <button id= "login-submit" type="submit" class="form-submit">Đăng nhập</button>
+    </form>
+<!-- !Primary Navigation -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-<script src="validator.js"></script>
-<script src="process_form.js"></script>
 <script>
-
 document.addEventListener('DOMContentLoaded', function () {
   Validator({
     form: '#form-1',
@@ -136,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (overlay.classList.contains('visible')) {
                         overlay.classList.remove('visible');
                     }
-                   
                 }
                 else {
                       alert(data.alert);
@@ -188,7 +174,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         btnLogin.classList.add('hide');
                         btnLogout.classList.add('visible');
                         btnUser.innerText= data.fullname;
-                       
                     }
                     else {
                       alert(data.alert);
@@ -198,48 +183,60 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
               }
-   
   });
 });
-
+function showResult(str){
+  var livesearch = document.getElementById("livesearch");
+    if (str.length==0) {
+      livesearch.innerHTML="";
+      livesearch.style.border="0px";
+      return;
+    }
+    $.ajax({
+      type: 'GET',
+      url: 'livesearch.php',
+      dataType: 'json',
+      data: {"str":str},
+      success: function(data){
+          livesearch.innerHTML=data.hint;
+          livesearch.style.border="1px solid #A5ACB2";
+      }
+    });
+  }
 </script>
     <!-- Primary Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info">
         <a class="navbar-brand" href="index.php"><span><i class="fas fa-home"></i></span> Home Page</a>
+        <form class="form-inline" id="search-form">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)" style="width: 200px;">
+            <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+          <div id="livesearch"></div>
+        </form>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
+        
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav m-auto font-rubik">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">On Sale</a>
+            <ul class="navbar-nav m-auto font-rubik" id="menu-site">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Category</a>
+                    <a class="nav-link" href="#">Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Products <i class="fas fa-chevron-down"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Category <i class="fas fa-chevron-down"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Coming Soon</a>
+                    <a class="nav-link" href="#">Blogs</a>
                 </li>
             </ul>
-            <form action="#" class="font-size-14 font-rale">
-                <a href="cart.php" class="py-2 rounded-pill color-primary-bg">
-                    <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
-                    <span class="px-3 py-2 rounded-pill text-dark bg-light"><?php echo count($product->getData('cart')); ?></span>
-                </a>
-            </form>
+            <div class="username px-3 border-right"></div>
+            <button href="#" class="login btn btn-info"><i class="fas fa-sign-in-alt" style="margin-right: 2px;"></i>Login</button>
+            <button href="#" class="register btn btn-info"><i class="fas fa-user"style="margin-right: 2px;"></i>Sign up</button>
+            <button href="#" class="logout btn btn-info"><i class="fas fa-sign-out-alt"style="margin-right: 2px;"></i>Logout</button>
         </div>
     </nav>
-    <!-- !Primary Navigation -->
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script src="validator.js"></script>
+<script src="process_form.js"></script>
 </header>
 <!-- !start #header -->
 <!-- start #main-site -->

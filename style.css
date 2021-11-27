@@ -463,7 +463,14 @@ html {
     color: rgb(158, 56, 38);
     font-size: 16px;
 }
-
+#livesearch{
+    width: 200px; 
+    background: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+}
 @media screen and (max-width: 992px) {
     .navbar-collapse.collapse.in { 
         display: block!important;
@@ -471,8 +478,39 @@ html {
     .collapsing {
         overflow: hidden!important;
     }
+    #livesearch{
+        position: relative;
+        /*This is relative to the navbar now*/
+        left: -250px;
+        top: 55px;
+    }
 }
 
 .navbar-collapse {
     height: auto!important;
+}
+
+
+@media screen  and (min-width: 992px){
+    #search-form{
+        position:absolute;
+        right: 35%;
+    }
+    #menu-site{
+        position: relative;
+        right: 25%;
+    }
+    #livesearch{
+        position: absolute;
+        width: 200px; 
+        background: white;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+        /*This is relative to the navbar now*/
+        left: 0;
+        right: 0;
+        top: 40px;
+    }
 }
