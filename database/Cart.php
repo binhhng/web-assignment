@@ -43,7 +43,10 @@ class Cart
             $result = $this->insertIntoCart($params);
             if ($result){
                 // Reload Page
-                header("Location: " . $_SERVER['PHP_SELF']);
+                // header("Location: " . $_SERVER['PHP_SELF']);
+                echo "<script>
+                    window.history.back(1);
+                    </script>";
             }
         }
     }
@@ -79,22 +82,5 @@ class Cart
             return $cart_id;
         }
     }
-
-    // Save for later
-    public function saveForLater($item_id = null, $saveTable = "wishlist", $fromTable = "cart"){
-        if ($item_id != null){
-            $query = "INSERT INTO {$saveTable} SELECT * FROM {$fromTable} WHERE item_id={$item_id};";
-            $query .= "DELETE FROM {$fromTable} WHERE item_id={$item_id};";
-
-            // execute multiple query
-            $result = $this->db->con->multi_query($query);
-
-            if($result){
-                header("Location :" . $_SERVER['PHP_SELF']);
-            }
-            return $result;
-        }
-    }
-
 
 }
