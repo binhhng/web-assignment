@@ -10,11 +10,42 @@
             $Cart->saveForLater($_POST['item_id']);
         }
     }
+    // session_start();
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+</head>
+<body>
+                    <form class="form" id="form-3">
+                    <h3 class="heading">Điền thông tin khách hàng</h3>
+                    <p class="desc">Đảm bảo dịch vụ tốt nhất ❤️</p>
 
+                    <div class="spacer"></div>
+
+                    <div class="form-group">
+                    <label for="phone-number" class="form-label">Số điện thoại:</label>
+                    <input class="form-control" type="tel" id="phone-number" name="phone-number" placeholder="VD:0359999999" pattern="(84|0[3|5|7|8|9])+([0-9]{8})\b">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address" class="form-label">Địa chỉ</label>
+                        <input id="address" name="address" type="text" placeholder="Địa chỉ của bạn" class="form-control">
+                        <span class="form-message"></span>
+                    </div>
+      
+                    <button id= "buy-submit" type="submit" class="form-submit">Hoàn thành</button>
+                    <button id= "buy-cancel" type="submit" class="form-submit">Hủy</button>
+                </form>
 <section id="cart" class="py-3 mb-5">
     <div class="container-fluid w-75">
-        <h5 class="font-baloo font-size-20">Shopping Cart</h5>
+        <h5 style="margin-top:50px" class="font-baloo font-size-20">Shopping Cart</h5>
 
         <!--  shopping cart items   -->
         <div class="row">
@@ -49,7 +80,7 @@
                         <div class="qty d-flex pt-2">
                             <div class="d-flex font-rale w-25">
                                 <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? '0'; ?>"><i class="fas fa-angle-up"></i></button>
-                                <input type="text" data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
+                                <input style="text-align:center" type="text" data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
                                 <button data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
                             </div>
 
@@ -82,19 +113,104 @@
                     endforeach;
                 ?>
             </div>
+            
             <!-- subtotal section-->
             <div class="col-sm-3">
                 <div class="sub-total border text-center mt-2">
                     <h6 class="font-size-12 font-rale text-success py-3"><i class="fas fa-check"></i> Your order is eligible for FREE Delivery.</h6>
                     <div class="border-top py-4">
                         <h5 class="font-baloo font-size-20">Subtotal ( <?php echo isset($subTotal) ? count($subTotal) : 0; ?> item):&nbsp; <span class="text-danger">$<span class="text-danger" id="deal-price"><?php echo isset($subTotal) ? $Cart->getSum($subTotal) : 0; ?></span> </span> </h5>
-                        <button type="submit" class="btn btn-warning mt-3">Proceed to Buy</button>
+                        <button id="btn-buy" class=" btn btn-warning mt-3">Proceed to Buy</button>
                     </div>
                 </div>
+                
             </div>
+            
+            <script src="validator.js"></script>
+            
+            <script>
+document.addEventListener('DOMContentLoaded', function () {
+  
+
+
+  Validator({
+    form: '#form-3',
+    formGroupSelector: '.form-group',
+    errorSelector: '.form-message',
+    rules: [
+      Validator.isRequired('#address'),
+      Validator.isRequired('#phone-number'),
+    ],
+    onSubmit: function (data) {
+            var phoneNumber = data["phone-number"];
+            var address = data["address"];
+            var date = new Date();
+            $.ajax({
+                type: 'POST',
+                url: 'process_buy.php',
+                dataType: "json",
+                data: { "phoneNumber": phoneNumber, "address": address, "date":date},
+                success: function(data) {
+                    //validating data output from server
+                    if (data.code =='404') {
+                        if (form_3.classList.contains('visible')) {
+                            form_3.classList.remove('visible');
+                        }
+                        if (overlay.classList.contains('visible')) {
+                            overlay.classList.remove('visible');
+                        }
+                    }
+                    if (data.code == '200') {
+                        $('#phone-number').val('');
+                        $('#address').val('');
+                        alert(data.alert);
+                        if (form_3.classList.contains('visible')) {
+                            form_3.classList.remove('visible');
+                        }
+                        if (overlay.classList.contains('visible')) {
+                            overlay.classList.remove('visible');
+                        }
+                    }
+                    else {
+                      alert(data.alert);
+                    }
+                    
+
+                
+                }
+            });
+        }
+  });
+});
+var form_3 = document.querySelector("#form-3");
+var btnBuy = document.querySelector("#btn-buy");
+var btnCancel = document.querySelector("#buy-cancel");
+var overlay = document.querySelector(".overlay");
+btnBuy.onclick = function() {
+    form_3.classList.add('visible');
+    overlay.classList.add('visible');
+}
+btnCancel.onclick = function() {
+    form_3.classList.remove('visible');
+    overlay.classList.remove('visible');
+}
+overlay.onclick = function() {
+       if (form_3.classList.contains('visible')) {
+            form_3.classList.remove('visible');
+        };
+        
+        if (overlay.classList.contains('visible')) {
+            overlay.classList.remove('visible');
+        }
+    }
+            </script>
+
             <!-- !subtotal section-->
         </div>
         <!--  !shopping cart items   -->
     </div>
+    <script src="process_form.js"></script>
 </section>
 <!-- !Shopping cart section  -->
+</body>
+</html>

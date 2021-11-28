@@ -37,8 +37,10 @@ if ($result->num_rows > 0)
    while($row = $result->fetch_assoc()) {
       $_SESSION["email"] = $email;
       $_SESSION["fullname"] =$fullname= $row["FULL_NAME"];
+      
 
   }
+  header("Refresh:0");
 } 
 else {
    $alert = "Đăng nhập thất bại !!!";

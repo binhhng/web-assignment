@@ -21,6 +21,7 @@
     <?php
     // require functions.php file
     require ('functions.php');
+    session_start();
     ?>
 
 </head>
@@ -82,6 +83,51 @@
       <button id= "login-submit" type="submit" class="form-submit">Đăng nhập</button>
     </form>
 <!-- !Primary Navigation -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info">
+        <a class="navbar-brand" href="index.php"><span><i class="fas fa-home"></i></span> Home Page</a>
+        <form class="form-inline" id="search-form">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)" style="width: 200px;">
+            <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+          <div id="livesearch"></div>
+        </form>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav m-auto font-rubik" id="menu-site">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.php">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blogs</a>
+                </li>
+            </ul>
+            
+            <div class="username px-3 border-right"><?php if (isset($_SESSION['fullname'])) {
+                                echo $_SESSION['fullname'];}
+                                else {
+                                  echo "";
+                                }
+             ?></div>
+             <?php
+            if(isset($_SESSION['fullname'])):?>
+
+            <button href="#" class="logout btn btn-info"><i class="fas fa-sign-out-alt"style="margin-right: 2px;"></i>Logout</button>
+            <?php    
+            else:?>
+
+            <button href="#" class="login btn btn-info"><i class="fas fa-sign-in-alt" style="margin-right: 2px;"></i>Login</button>
+            <button href="#" class="register btn btn-info"><i class="fas fa-user"style="margin-right: 2px;"></i>Sign Up</button>
+
+            <?php endif; ?>
+            
+            
+        </div>
+    </nav>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -164,16 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (overlay.classList.contains('visible')) {
                             overlay.classList.remove('visible');
                         }
-                        var btnRegis = document.querySelector(".register");
-                        var btnLogin = document.querySelector(".login");
-                        var btnLogout = document.querySelector(".logout");
-                        var btnUser = document.querySelector(".username");
-                        btnRegis.classList.remove('visible');
-                        btnLogin.classList.remove('visible');
-                        btnRegis.classList.add('hide');
-                        btnLogin.classList.add('hide');
-                        btnLogout.classList.add('visible');
-                        btnUser.innerText= data.fullname;
+                        window.location.reload();
                     }
                     else {
                       alert(data.alert);
@@ -203,37 +240,29 @@ function showResult(str){
       }
     });
   }
+  var btnLogout = document.querySelector(".logout");
+  if(btnLogout) {
+    btnLogout.onclick = function() {
+    $.ajax({
+        type: 'POST',
+        url: 'logout.php',
+        dataType: "json",
+        data: {},
+        success: function(data) {
+            //validating data output from server
+            if (data.code == '200') {
+                alert(data.alert);
+                window.location.reload();
+
+            }
+
+        }
+    });
+}
+  }
+
 </script>
-    <!-- Primary Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info">
-        <a class="navbar-brand" href="index.php"><span><i class="fas fa-home"></i></span> Home Page</a>
-        <form class="form-inline" id="search-form">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)" style="width: 200px;">
-            <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-          <div id="livesearch"></div>
-        </form>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav m-auto font-rubik" id="menu-site">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Cart</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blogs</a>
-                </li>
-            </ul>
-            <div class="username px-3 border-right"></div>
-            <button href="#" class="login btn btn-info"><i class="fas fa-sign-in-alt" style="margin-right: 2px;"></i>Login</button>
-            <button href="#" class="register btn btn-info"><i class="fas fa-user"style="margin-right: 2px;"></i>Sign up</button>
-            <button href="#" class="logout btn btn-info"><i class="fas fa-sign-out-alt"style="margin-right: 2px;"></i>Logout</button>
-        </div>
-    </nav>
+    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script src="validator.js"></script>
 <script src="process_form.js"></script>

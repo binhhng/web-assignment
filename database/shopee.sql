@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 24, 2021 lúc 01:50 PM
+-- Thời gian đã tạo: Th10 28, 2021 lúc 02:10 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.3.31
 
@@ -33,6 +33,13 @@ CREATE TABLE `cart` (
   `item_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `item_id`) VALUES
+(33, 1, 12);
+
 -- --------------------------------------------------------
 
 --
@@ -58,7 +65,35 @@ INSERT INTO `feedbacks` (`email`, `content`) VALUES
 ('xuanvu12a2ald@gmail.com', 'ádasda'),
 ('admin1@example.com', 'ưqeqwe'),
 ('admin1@example.com', 'ads'),
-('vu.phanbachkhoa@hcmut.edu.vn', 'ád');
+('vu.phanbachkhoa@hcmut.edu.vn', 'ád'),
+('admin1@example.com', 'adasd');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `orders`
+--
+
+CREATE TABLE `orders` (
+  `Id` int(11) NOT NULL,
+  `fullname` varchar(255) DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `item_id` varchar(200) DEFAULT NULL,
+  `so_luong` varchar(10) DEFAULT NULL,
+  `phone_number` varchar(15) DEFAULT NULL,
+  `diachi` varchar(500) DEFAULT NULL,
+  `ngay_mua` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `orders`
+--
+
+INSERT INTO `orders` (`Id`, `fullname`, `email`, `item_id`, `so_luong`, `phone_number`, `diachi`, `ngay_mua`) VALUES
+(19, 'xuan vu', 'vu.phanbachkhoa@hcmut.edu.vn', '3,6,5,8,12,', '', '0353120115', 'sadasda', 'Sun Nov 28 2021 18:27:51 GMT+0700 (Giờ Đông Dương)'),
+(20, 'xuan vu', 'vu.phanbachkhoa@hcmut.edu.vn', '12,', '', '0353120115', 'aaaaa', 'Sun Nov 28 2021 18:37:13 GMT+0700 (Giờ Đông Dương)'),
+(21, 'xuan vu', 'admin1@gmail.com', '12,', '', '0353120115', 'sadasda', 'Sun Nov 28 2021 18:48:28 GMT+0700 (Giờ Đông Dương)'),
+(22, 'xuan vu', 'vu.phanbachkhoa@hcmut.edu.vn', '12,', '', '0353120115', 'sadasda', 'Sun Nov 28 2021 19:03:06 GMT+0700 (Giờ Đông Dương)');
 
 -- --------------------------------------------------------
 
@@ -105,6 +140,20 @@ CREATE TABLE `register` (
   `PASS_WORD` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Đang đổ dữ liệu cho bảng `register`
+--
+
+INSERT INTO `register` (`ID`, `FULL_NAME`, `EMAIL`, `PASS_WORD`) VALUES
+(24, 'xuan vu', 'admin1@gmail.com', '123456'),
+(25, 'xuan vu', 'vu.phanbachkhoa@hcmut.edu.vn', '123456789'),
+(34, 'xuan vu', 'vu.phanbachkhoa@hcmut.edu', '123456789'),
+(35, 'xuan vu', 'admin12@gmail.com', '1234567'),
+(36, 'Phan Xuân Vũ', 'user1@gmail.com', '123456'),
+(37, 'ádaadsdasd', 'user13@gmail.com', '12345678xx'),
+(38, 'xuan vu', 'example@gmail.com', '123456'),
+(39, 'sa', 'user157@gmail.com', '123456');
+
 -- --------------------------------------------------------
 
 --
@@ -128,6 +177,12 @@ ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`);
 
 --
+-- Chỉ mục cho bảng `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
@@ -147,7 +202,13 @@ ALTER TABLE `register`
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT cho bảng `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
@@ -159,7 +220,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT cho bảng `register`
 --
 ALTER TABLE `register`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
