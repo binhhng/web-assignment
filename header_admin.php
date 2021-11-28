@@ -84,31 +84,8 @@
     </form>
 <!-- !Primary Navigation -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info">
-        <a class="navbar-brand" href="index.php"><span><i class="fas fa-home"></i></span> Home Page</a>
-        <form class="form-inline" id="search-form">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)" style="width: 200px;" id="search">
-            <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-          <div id="livesearch"></div>
-        </form>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav m-auto font-rubik" id="menu-site">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="cart.php">
-                      Cart
-                      <span class="px-3 py-2 rounded-pill text-dark bg-light" <?php if (!count($product->getData('cart'))) echo 'style="display:none;"';?> ><?php echo count($product->getData('cart')); ?></span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blogs</a>
-                </li>
-            </ul>
             
             <div class="username px-3 border-right"><?php if (isset($_SESSION['fullname'])) {
                                 echo $_SESSION['fullname'];}

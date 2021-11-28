@@ -28,10 +28,8 @@ overlay.onclick = function() {
     if (form_2.classList.contains('visible')) {
         form_2.classList.remove('visible');
     }
-    if (form_3.classList.contains('visible')) {
-        form_3.classList.remove('visible');
-    }
     if (overlay.classList.contains('visible')) {
         overlay.classList.remove('visible');
+        overlay.classList.add('hide');
     }
 }

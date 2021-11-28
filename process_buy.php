@@ -32,13 +32,15 @@ if ($con->connect_error) {
       $q ="SELECT item_id FROM cart";
       $result = $con->query($q);
        while($row = $result->fetch_assoc()) {
-               $item_id= $item_id.$row["item_id"].",";
-       }
+               
+        $item_id= $item_id.$row["item_id"].",";
+}
       $sql = "INSERT INTO orders (fullname, email,item_id, so_luong, phone_number,diachi,ngay_mua)
         VALUES ('$fullname','$email','$item_id','$num' ,'$phoneNumber','$address','$date')";
                 if ($con->query($sql) === TRUE) {
                     $alert = "Đặt mua thành công !!!";
                     $code = '200';
+
                 }else {
                    $alert = "Đặt mua thất bại: " . $con->error;
                 } 

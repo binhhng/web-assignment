@@ -5,5 +5,5 @@
   $code = '200';
   $alert="Đăng xuất thành công";
   echo json_encode(['code'=>$code,'alert'=>$alert ]);
-  header("Refresh:0");
+  // header("Refresh:0");
 ?>
