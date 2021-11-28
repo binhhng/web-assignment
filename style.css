@@ -464,6 +464,7 @@ html {
     font-size: 16px;
 }
 #livesearch{
+    position: absolute;
     width: 200px; 
     background: white;
     border-bottom-left-radius: 10px;
@@ -471,6 +472,7 @@ html {
     max-height: 200px;
     overflow-y: auto;
     padding: 0px 12px;
+    top: 40px;
 }
 @media screen and (max-width: 992px) {
     .navbar-collapse.collapse.in { 
@@ -479,12 +481,7 @@ html {
     .collapsing {
         overflow: hidden!important;
     }
-    #livesearch{
-        position: relative;
-        /*This is relative to the navbar now*/
-        left: -250px;
-        top: 55px;
-    }
+
 }
 
 .navbar-collapse {
@@ -502,16 +499,9 @@ html {
         right: 25%;
     }
     #livesearch{
-        position: absolute;
-        width: 200px; 
-        background: white;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        max-height: 200px;
-        overflow-y: auto;
         /*This is relative to the navbar now*/
         left: 0;
         right: 0;
-        top: 40px;
+        
     }
 }

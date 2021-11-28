@@ -203,14 +203,22 @@ function showResult(str){
       }
     });
   }
+function hideSearch(){
+  var livesearch = document.getElementById("livesearch");
+  livesearch.style.display = "none";
+}
+function showSearch(){
+  var livesearch = document.getElementById("livesearch");
+  livesearch.style.display = "block";
+}
 </script>
     <!-- Primary Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info">
         <a class="navbar-brand" href="index.php"><span><i class="fas fa-home"></i></span> Home Page</a>
         <form class="form-inline" id="search-form">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)" style="width: 200px;">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)" onblur="hideSearch()" onfocus="showSearch()" style="width: 200px;">
             <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-          <div id="livesearch"></div>
+            <div id="livesearch"></div>
         </form>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
