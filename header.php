@@ -23,7 +23,7 @@
     require ('functions.php');
     session_start();
     ?>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- start #header -->
@@ -86,7 +86,7 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info">
         <a class="navbar-brand" href="index.php"><span><i class="fas fa-home"></i></span> Home Page</a>
         <form class="form-inline" id="search-form">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)" style="width: 200px;">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onkeyup="showResult(this.value)" style="width: 200px;" id="search">
             <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
           <div id="livesearch"></div>
         </form>
@@ -100,7 +100,10 @@
                     <a class="nav-link" href="#">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cart.php">Cart</a>
+                    <a class="nav-link" href="cart.php">
+                      Cart
+                      <span class="px-3 py-2 rounded-pill text-dark bg-light" <?php if (!count($product->getData('cart'))) echo 'style="display:none;"';?> ><?php echo count($product->getData('cart')); ?></span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Blogs</a>
@@ -112,8 +115,8 @@
                                 else {
                                   echo "";
                                 }
-             ?></div>
-             <?php
+            ?></div>
+            <?php
             if(isset($_SESSION['fullname'])):?>
 
             <button href="#" class="logout btn btn-info"><i class="fas fa-sign-out-alt"style="margin-right: 2px;"></i>Logout</button>
@@ -258,8 +261,19 @@ function showResult(str){
 
         }
     });
-}
   }
+  }
+  $("#search").bind("mouseover",function() {
+    $("#livesearch").show();
+  }).bind("mouseout",function() {
+    $("#livesearch").hide();
+  });
+
+  $("#livesearch").bind("mouseover",function() {
+    $("#livesearch").show();
+  }).bind("mouseout",function() {
+    $("#livesearch").hide();
+  });
 
 </script>
     
