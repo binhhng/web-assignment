@@ -41,7 +41,6 @@
                     </div>
       
                     <button id= "buy-submit" type="submit" class="form-submit">Hoàn thành</button>
-                    <button id= "buy-cancel" type="submit" class="form-submit">Hủy</button>
                 </form>
 <section id="cart" class="py-3 mb-5">
     <div class="container-fluid w-75">
@@ -184,15 +183,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 var form_3 = document.querySelector("#form-3");
 var btnBuy = document.querySelector("#btn-buy");
-var btnCancel = document.querySelector("#buy-cancel");
 var overlay = document.querySelector(".overlay");
 btnBuy.onclick = function() {
     form_3.classList.add('visible');
     overlay.classList.add('visible');
-}
-btnCancel.onclick = function() {
-    form_3.classList.remove('visible');
-    overlay.classList.remove('visible');
 }
 overlay.onclick = function() {
        if (form_3.classList.contains('visible')) {
