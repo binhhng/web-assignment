@@ -26,7 +26,7 @@
 </head>
 <body>
 <!-- start #header -->
-<header id="header" style="height: 30px;">
+<header id="header" >
     <div class="overlay "></div>
     <form class="form " id="form-1">
       <h3 class="heading">Đăng ký thành viên</h3>
@@ -248,4 +248,4 @@ function showSearch(){
 </header>
 <!-- !start #header -->
 <!-- start #main-site -->
-<main id="main-site">
+<main id="main-site" style="margin-top: 50px;">
