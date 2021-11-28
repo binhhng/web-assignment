@@ -42,7 +42,7 @@ else {
 }
 
 //output the response
-echo json_encode(['hint'=>$hint]);
+echo json_encode(['hint'=>$response]);
 // close connection
 $con->close();
 ?>
