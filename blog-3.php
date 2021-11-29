@@ -18,7 +18,7 @@ include ('header.php');
                 <p>
                     Tổng thể iPhone 7 không khác gì so với iPhone 6s hay iPhone 6 nhưng với viền ăng ten mới và hạn chế một số điểm cắt như lỗ cắm tai nghe hay phần khoét chỗ nút tăng giảm âm lượng làm cho nó nhìn mượt mà và đẹp hơn so với iPhone 6/6s. Phần camera nhìn to hơn, lồi hơi nhưng không có cảm giác cấn tay như hai đời trước. Tai nghe mới không khác thiết kế cũ, chỉ khác đầu cắm Lightning nhìn to hơn và thô hơn. Đầu đổi từ Lightning ra lỗi tai nghe tiêu chuẩn cũng không đẹp do hai đầu quá lớn so với cáp ở giữa.<br/><br/>
                     Hộp máy được đóng seal kiểu mới, các chữ iPhone và logo màu hồng ánh kim...<br/><br/>
-                    <iframe width="764" height="430" src="https://www.youtube.com/embed/sUzs6yR__10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br/><br/>
+                    <iframe width="100%" height="430" src="https://www.youtube.com/embed/sUzs6yR__10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br/><br/>
                     <img src="./assets/blog/blog-3-1.jpg" alt="cart image" class="card-img-top"><br/><br/>
                     Những gì trong hộp: Máy, cáp Lightning, tai nghe, đầu đổi Lightning ra tai nghe truyền thống<br/><br/>
                     <img src="./assets/blog/blog-3-2.jpg" alt="cart image" class="card-img-top"><br/><br/>
