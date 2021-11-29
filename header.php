@@ -97,7 +97,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav m-auto font-rubik" id="menu-site">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="about_us.php">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="cart.php">
@@ -106,7 +106,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Blogs</a>
+                    <a class="nav-link" href="blog_list.php">Blogs</a>
                 </li>
             </ul>
             
