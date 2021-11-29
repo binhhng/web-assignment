@@ -6,10 +6,16 @@ var btnRegis = document.querySelector(".register");
 var btnLogin = document.querySelector(".login");
 var btnLogout = document.querySelector(".logout");
 var divUser = document.querySelector(".username");
-
+var cartLogin = document.getElementById("cartLogin");
 if (btnRegis) {
     btnRegis.onclick = function() {
         form_1.classList.add('visible');
+        overlay.classList.add('visible');
+    }
+}
+if (cartLogin) {
+    cartLogin.onclick = function() {
+        form_2.classList.add('visible');
         overlay.classList.add('visible');
     }
 }

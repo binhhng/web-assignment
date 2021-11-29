@@ -100,10 +100,19 @@
                     <a class="nav-link" href="about_us.php">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cart.php">
+                <?php
+                if(isset($_SESSION['fullname'])):?>
+                  <a class="nav-link" href="cart.php">
+                        Cart
+                        <span class="px-3 py-2 rounded-pill text-dark bg-light" <?php if (!count($product->getData('cart'))) echo 'style="display:none;"';?> ><?php echo count($product->getData('cart')); ?></span>
+                      </a>
+                <?php else:?>
+                <a href="#" class="nav-link" id="cartLogin">Cart</a>
+                <?php endif; ?>
+                    <!--<a class="nav-link" href="cart.php">
                       Cart
                       <span class="px-3 py-2 rounded-pill text-dark bg-light" <?php if (!count($product->getData('cart'))) echo 'style="display:none;"';?> ><?php echo count($product->getData('cart')); ?></span>
-                    </a>
+                    </a>-->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="blog_list.php">Blogs</a>

@@ -2,6 +2,10 @@
 ob_start();
 // include header.php file
 include ('header.php');
+if (!isset($_SESSION['fullname'])) {
+    header('Location: index.php');
+    exit();
+}
 ?>
 
 <?php
