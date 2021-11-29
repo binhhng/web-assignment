@@ -44,7 +44,8 @@ if ($con->connect_error) {
   <thead>
     <tr>
       <th class="col-2"scope="col">Mail</th>
-      <th  scope="col">Nội dung</th>
+      <th class="col-8">Nội dung</th>
+      <th class="col-2">Xóa</th>
     </tr>
   </thead>
   <tbody>
@@ -56,28 +57,30 @@ if ($con->connect_error) {
     if ($result->num_rows > 0) 
     
    while($row = $result->fetch_assoc()) {
-      echo "<tr><td>" . $row['email'] . "</td><td>" . $row['content'] . "</td></tr>";
+      echo "<tr><td>" . $row['email'] . "</td><td>" . $row['content'] ."</td><td>".'<input type="checkbox" name="feedbacks[]" value="'.$row['Id'].'"'."</td></tr>";
   }
     
 // $con->close();
 ?>
   </tbody>
 </table>
+
 <center><h2>Bảng Users</h2></center>
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
       <th class="col-1"scope="col">Id</th>
-      <th class="col-4" scope="col">Họ Tên</th>
+      <th class="col-3" scope="col">Họ Tên</th>
       <th class="col-4" scope="col">Email</th>
       <th class="col-3" scope="col">Pass word</th>
+      <th class="col-3">Xóa</th>
     </tr>
   </thead>
   <tbody>
   <?php
 //define new data variables
     
-    $sql ="SELECT * FROM register";;
+    $sql ="SELECT * FROM register";
     $result = $con->query($sql);
     if ($result->num_rows > 0) 
     
@@ -89,18 +92,20 @@ if ($con->connect_error) {
 ?>
   </tbody>
 </table>
+
 <center><h2>Bảng Orders</h2></center>
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
       <th class="col-1"scope="col">Id</th>
-      <th class="col-2" scope="col">Họ tên</th>
+      <th class="col-1" scope="col">Họ tên</th>
       <th class="col-2" scope="col">Email</th>
       <th class="col-1" scope="col">Item_id</th>
       <th class="col-1" scope="col">Số lượng</th>
       <th class="col-1" scope="col">Sđt</th>
       <th class="col-2" scope="col">Địa chỉ</th>
       <th class="col-2" scope="col">Ngày mua</th>
+      <th class="col-1">Xóa</th>
     </tr>
   </thead>
   <tbody>
@@ -119,8 +124,9 @@ $con->close();
 ?>
   </tbody>
 </table>
-   </div>
-   
+
+</div>
+
 </body>
 </html>
 

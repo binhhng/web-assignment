@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 28, 2021 lúc 02:10 PM
+-- Thời gian đã tạo: Th10 29, 2021 lúc 04:39 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 7.3.31
 
@@ -38,7 +38,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cart_id`, `user_id`, `item_id`) VALUES
-(33, 1, 12);
+(55, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -47,26 +47,18 @@ INSERT INTO `cart` (`cart_id`, `user_id`, `item_id`) VALUES
 --
 
 CREATE TABLE `feedbacks` (
-  `email` text NOT NULL,
-  `content` text NOT NULL
+  `Id` int(11) NOT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `content` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `feedbacks`
 --
 
-INSERT INTO `feedbacks` (`email`, `content`) VALUES
-('admin1@example.com', 'ádasdas'),
-('asdasdsfa@gmail.com', 'adadac vtx'),
-('admin1@example.com', 'sadas'),
-('admin1@example.com', 'adasa'),
-('asdasdsfa@gmail.com', 'asdas'),
-('admin1@example.com', 'ádasd'),
-('xuanvu12a2ald@gmail.com', 'ádasda'),
-('admin1@example.com', 'ưqeqwe'),
-('admin1@example.com', 'ads'),
-('vu.phanbachkhoa@hcmut.edu.vn', 'ád'),
-('admin1@example.com', 'adasd');
+INSERT INTO `feedbacks` (`Id`, `email`, `content`) VALUES
+(1, 'admin1@example.com', 'Shop làm rất tốt'),
+(2, 'vufifa987@gmail.com', 'sấddadasdsada');
 
 -- --------------------------------------------------------
 
@@ -90,10 +82,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`Id`, `fullname`, `email`, `item_id`, `so_luong`, `phone_number`, `diachi`, `ngay_mua`) VALUES
-(19, 'xuan vu', 'vu.phanbachkhoa@hcmut.edu.vn', '3,6,5,8,12,', '', '0353120115', 'sadasda', 'Sun Nov 28 2021 18:27:51 GMT+0700 (Giờ Đông Dương)'),
-(20, 'xuan vu', 'vu.phanbachkhoa@hcmut.edu.vn', '12,', '', '0353120115', 'aaaaa', 'Sun Nov 28 2021 18:37:13 GMT+0700 (Giờ Đông Dương)'),
-(21, 'xuan vu', 'admin1@gmail.com', '12,', '', '0353120115', 'sadasda', 'Sun Nov 28 2021 18:48:28 GMT+0700 (Giờ Đông Dương)'),
-(22, 'xuan vu', 'vu.phanbachkhoa@hcmut.edu.vn', '12,', '', '0353120115', 'sadasda', 'Sun Nov 28 2021 19:03:06 GMT+0700 (Giờ Đông Dương)');
+(1, 'xuan vu', 'admin1@gmail.com', '6,8,', '3,4,', '0353120115', 'ktx khu A', 'Mon Nov 29 2021 14:48:57 GMT+0700 (Giờ Đông Dương)');
 
 -- --------------------------------------------------------
 
@@ -152,7 +141,9 @@ INSERT INTO `register` (`ID`, `FULL_NAME`, `EMAIL`, `PASS_WORD`) VALUES
 (36, 'Phan Xuân Vũ', 'user1@gmail.com', '123456'),
 (37, 'ádaadsdasd', 'user13@gmail.com', '12345678xx'),
 (38, 'xuan vu', 'example@gmail.com', '123456'),
-(39, 'sa', 'user157@gmail.com', '123456');
+(39, 'sa', 'user157@gmail.com', '123456'),
+(40, 'Phan X Vũ', 'xuanvu@gmail.com', '123456'),
+(41, 'Phan Xuân Vũ', 'vuadmin5@gmail.com', '123456');
 
 -- --------------------------------------------------------
 
@@ -175,6 +166,12 @@ CREATE TABLE `wishlist` (
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`);
+
+--
+-- Chỉ mục cho bảng `feedbacks`
+--
+ALTER TABLE `feedbacks`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Chỉ mục cho bảng `orders`
@@ -202,13 +199,19 @@ ALTER TABLE `register`
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
+--
+-- AUTO_INCREMENT cho bảng `feedbacks`
+--
+ALTER TABLE `feedbacks`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
@@ -220,7 +223,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT cho bảng `register`
 --
 ALTER TABLE `register`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
