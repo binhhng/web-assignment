@@ -22,7 +22,7 @@
     // require functions.php file
     require ('functions.php');
     session_start();
-    if (!isset($_SESSION['fullname'])) {
+    if ($_SESSION['email']!='vuadmin5@gmail.com') {
       header('Location: index.php');
       exit();
   }
