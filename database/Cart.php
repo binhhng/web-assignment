@@ -55,6 +55,9 @@ class Cart
             echo '<script type="text/javascript">',
             'form_2.classList.add("visible");',
             'overlay.classList.add("visible");',
+            'if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href );
+            }',            
             '</script>';
         }
     }
