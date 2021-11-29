@@ -57,7 +57,7 @@ if ($con->connect_error) {
     if ($result->num_rows > 0) 
     
    while($row = $result->fetch_assoc()) {
-      echo "<tr><td>" . $row['email'] . "</td><td>" . $row['content'] ."</td><td>".'<input type="checkbox" name="feedbacks[]" value="'.$row['Id'].'"'."</td></tr>";
+      echo "<tr><td>" . $row['email'] . "</td><td>" . $row['content'] ."</td><td>".'<a href="delete.php?value=feedbacks&id='. $row['Id'].'">Delete</a>'."</td></tr>";
   }
     
 // $con->close();
@@ -85,7 +85,8 @@ if ($con->connect_error) {
     if ($result->num_rows > 0) 
     
    while($row = $result->fetch_assoc()) {
-      echo "<tr><td>" . $row['ID'] . "</td><td>" . $row['FULL_NAME'] . "</td><td>". $row['EMAIL'] . "</td><td>". $row['PASS_WORD'] . "</td></tr>";
+      echo "<tr><td>" . $row['ID'] . "</td><td>" . $row['FULL_NAME'] . "</td><td>". $row['EMAIL'] . "</td><td>". $row['PASS_WORD'] . 
+      "</td><td>".'<a href="delete.php?value=register&id='. $row['ID'].'">Delete</a>'."</td></tr>";
   }
     
 // $con->close();
@@ -117,7 +118,8 @@ if ($con->connect_error) {
     if ($result->num_rows > 0) 
     
    while($row = $result->fetch_assoc()) {
-      echo "<tr><td>" . $row['Id'] . "</td><td>" . $row['fullname'] . "</td><td>". $row['email'] . "</td><td>". $row['item_id'] . "</td><td>". $row['so_luong'] . "</td><td>". $row['phone_number'] . "</td><td>". $row['diachi'] . "</td><td>". $row['ngay_mua'] . "</td><td>";
+      echo "<tr><td>" . $row['Id'] . "</td><td>" . $row['fullname'] . "</td><td>". $row['email'] . "</td><td>". $row['item_id'] . "</td><td>". $row['so_luong'] . "</td><td>". $row['phone_number'] . "</td><td>". $row['diachi'] . "</td><td>". $row['ngay_mua'] . 
+      "</td><td>".'<a href="delete.php?value=orders&id='. $row['Id'].'">Delete</a>'."</td><td>";
   }
     
 $con->close();
