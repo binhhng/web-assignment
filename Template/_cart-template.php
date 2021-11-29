@@ -80,7 +80,7 @@
                         <div class="qty d-flex pt-2">
                             <div class="d-flex font-rale w-25">
                                 <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? '0'; ?>"><i class="fas fa-angle-up"></i></button>
-                                <input style="text-align:center" type="text" data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
+                                <input style="text-align:center" type="text" data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="hang_hoa qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
                                 <button data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
                             </div>
 
@@ -103,6 +103,7 @@
                 </div>
                 <!-- !cart item -->
                 <?php
+                           
                             return $item['item_price'];
                         }, $cart); // closing array_map function
                     endforeach;
@@ -137,6 +138,11 @@ document.addEventListener('DOMContentLoaded', function () {
       Validator.isRequired('#phone-number'),
     ],
     onSubmit: function (data) {
+            var hang_hoa = document.getElementsByClassName("hang_hoa");
+            var so_luong ="";
+            for(let i=0;i<hang_hoa.length;i++) {
+                so_luong=so_luong+ hang_hoa[i].value+",";
+            }
             var phoneNumber = data["phone-number"];
             var address = data["address"];
             var date = new Date();
@@ -144,9 +150,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 type: 'POST',
                 url: 'process_buy.php',
                 dataType: "json",
-                data: { "phoneNumber": phoneNumber, "address": address, "date":date},
+                data: { "phoneNumber": phoneNumber, "address": address, "date":date,"so_luong":so_luong},
                 success: function(data) {
                     //validating data output from server
+                    
                     if (data.code =='404') {
                         if (form_3.classList.contains('visible')) {
                             form_3.classList.remove('visible');

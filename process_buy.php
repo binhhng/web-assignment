@@ -23,17 +23,19 @@ if ($con->connect_error) {
 
 <?php
     $email = $fullname = $item_id= $phoneNumber =$num =$address = $alert= $code= "";
+    $num=array();
     if(!empty($_SESSION)){
       $email = $_SESSION["email"];
       $fullname = $_SESSION["fullname"];
       $address = $_POST["address"];
       $phoneNumber = $_POST["phoneNumber"];
+      $num = $_POST["so_luong"];
       $date = $_POST["date"]; 
       $q ="SELECT item_id FROM cart";
       $result = $con->query($q);
+      $i=0;
        while($row = $result->fetch_assoc()) {
-               
-        $item_id= $item_id.$row["item_id"].",";
+        $item_id=$item_id.$row["item_id"].",";
 }
       $sql = "INSERT INTO orders (fullname, email,item_id, so_luong, phone_number,diachi,ngay_mua)
         VALUES ('$fullname','$email','$item_id','$num' ,'$phoneNumber','$address','$date')";
