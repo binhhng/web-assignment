@@ -43,9 +43,10 @@ if ($con->connect_error) {
    <table class="table table-bordered table-hover">
   <thead>
     <tr>
+    <th class="col-1"scope="col">Id</th>
       <th class="col-2"scope="col">Mail</th>
       <th class="col-8">Nội dung</th>
-      <th class="col-2">Xóa</th>
+      <th class="col-1">Xóa</th>
     </tr>
   </thead>
   <tbody>
@@ -57,7 +58,7 @@ if ($con->connect_error) {
     if ($result->num_rows > 0) 
     
    while($row = $result->fetch_assoc()) {
-      echo "<tr><td>" . $row['email'] . "</td><td>" . $row['content'] ."</td><td>".'<a href="delete.php?value=feedbacks&id='. $row['Id'].'">Delete</a>'."</td></tr>";
+      echo "<tr><td>" . $row['Id'] . "</td><td>" . $row['email'] . "</td><td>" . $row['content'] ."</td><td>".'<a href="delete.php?value=feedbacks&id='. $row['Id'].'">Delete</a>'."</td></tr>";
   }
     
 // $con->close();
@@ -119,7 +120,7 @@ if ($con->connect_error) {
     
    while($row = $result->fetch_assoc()) {
       echo "<tr><td>" . $row['Id'] . "</td><td>" . $row['fullname'] . "</td><td>". $row['email'] . "</td><td>". $row['item_id'] . "</td><td>". $row['so_luong'] . "</td><td>". $row['phone_number'] . "</td><td>". $row['diachi'] . "</td><td>". $row['ngay_mua'] . 
-      "</td><td>".'<a href="delete.php?value=orders&id='. $row['Id'].'">Delete</a>'."</td><td>";
+      "</td><td>".'<a href="delete.php?value=orders&id='. $row['Id'].'">Delete</a>'."</td><tr>";
   }
     
 $con->close();

@@ -89,7 +89,7 @@
 <!-- !Primary Navigation -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info">
         
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             
             <div class="username px-3 border-right"><?php if (isset($_SESSION['fullname'])) {
                                 echo $_SESSION['fullname'];}
