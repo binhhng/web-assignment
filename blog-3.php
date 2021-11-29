@@ -5,9 +5,12 @@ include ('header.php');
 ?>
 
 <section id="product" class="py-3">
-    <div div class="container">
+    <div class="container">
         <div class="row">
-            <h1>Trên tay iPhone 7 hồng 256GB: máy đẹp hơn, màn hình đẹp hơn, cam to hơn...</h1>
+            <div class="col col-12">
+
+            
+            <h1 class="blog-title">Trên tay iPhone 7 hồng 256GB: máy đẹp hơn, màn hình đẹp hơn, cam to hơn...</h1>
             <br /><br /><br/><br/>
             <img src="./assets/blog/blog-3.jpg" alt="cart image" class="card-img-top">
             <div style="font-size:150%">
@@ -34,7 +37,9 @@ include ('header.php');
                     <img src="./assets/blog/blog-3-8.jpg" alt="cart image" class="card-img-top"><br/><br/>
                     Hộp iPhone 7 với cách đóng seal mới sẽ làm cho các chuyên gia dựng máy gặp khó khăn không ít.<br/><br/>
                 </p>
-            </div>            
+            </div>
+
+            </div>           
         </div>
     </div>
 </section>
@@ -44,3 +49,5 @@ include ('header.php');
 // include footer.php file
 include ('footer.php');
 ?>
+
+

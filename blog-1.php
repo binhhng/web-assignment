@@ -5,9 +5,12 @@ include ('header.php');
 ?>
 
 <section id="product" class="py-3">
-    <div div class="container">
+    <div class="container">
         <div class="row">
-            <h1>Đánh giá nhanh Xiaomi Redmi Note 7: rất đáng tiền</h1>
+            <div class="col col-12">
+
+            
+            <h1 class="blog-title">Đánh giá nhanh Xiaomi Redmi Note 7: rất đáng tiền</h1>
             <br/><br/><br/><br/>
             <img src="./assets/blog/blog-1.jpg" alt="cart image" class="card-img-top">
             <div style="font-size:150%">
@@ -59,7 +62,8 @@ include ('header.php');
                     <b>Chốt lại</b><br/>
                     Redmi Note 7 là một cái điện thoại đáng tiền và nên mua nếu bạn có ngân sách tầm 5 triệu đổ lại, muốn kiếm một cái điện thoại ngon lành để dùng trong 2-3 năm nữa. Hiệu năng rất tốt, thiết kế hiện đại, màu lưng xanh đẹp và pin trâu là những điểm mạnh nhất của con Redmi Note 7.<br/><br/>
                 </p>
-            </div>            
+            </div> 
+            </div>           
         </div>
     </div>
 </section>
