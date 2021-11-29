@@ -517,3 +517,11 @@ html {
         right: 0;
     }
 }
+
+@media screen and (max-width:684px) {
+    h1.blog-title,
+    h6.about_us--title,
+    h5.cart--title {
+        margin-top: 70px;
+    }
+}

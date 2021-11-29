@@ -45,7 +45,7 @@
                 </form>
 <section id="cart" class="py-3 mb-5">
     <div class="container-fluid w-75">
-        <h5 style="margin-top:50px" class="font-baloo font-size-20">Shopping Cart</h5>
+        <h5  class="cart--title font-baloo font-size-20">Shopping Cart</h5>
 
         <!--  shopping cart items   -->
         <div class="row">
