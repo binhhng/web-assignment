@@ -520,3 +520,19 @@ html {
         margin-top: 40px;
     }
 }
+@media screen and (max-width:492px) {
+    section#banner-area {
+        margin-top: 90px;
+    }
+    #main-site{
+        margin-top: 90px;
+    }
+}
+@media screen and (max-width:347px) {
+    section#banner-area {
+        margin-top: 135px;
+    }
+    #main-site{
+        margin-top: 135px;
+    }
+}

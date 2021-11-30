@@ -301,4 +301,4 @@ function showResult(str){
 </header>
 <!-- !start #header -->
 <!-- start #main-site -->
-<main id="main-site" style="margin-top: 30px;">
+<main id="main-site">
