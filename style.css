@@ -513,5 +513,10 @@ html {
     h5.cart--title {
         margin-top: 70px;
     }
-
+    section#banner-area {
+        margin-top: 135px;
+    }
+    #livesearch{
+        margin-top: 40px;
+    }
 }
