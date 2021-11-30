@@ -466,6 +466,7 @@ html {
 }
 
 #livesearch {
+    position: absolute;
     width: 200px;
     background: white;
     border-bottom-left-radius: 10px;
@@ -483,12 +484,6 @@ html {
     .collapsing {
         overflow: hidden!important;
     }
-    #livesearch {
-        position: relative;
-        /*This is relative to the navbar now*/
-        left: -250px;
-        top: 55px;
-    }
 }
 
 .navbar-collapse {
@@ -505,13 +500,6 @@ html {
         right: 25%;
     }
     #livesearch {
-        position: absolute;
-        width: 200px;
-        background: white;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        max-height: 200px;
-        overflow-y: auto;
         /*This is relative to the navbar now*/
         left: 0;
         right: 0;
@@ -525,7 +513,5 @@ html {
     h5.cart--title {
         margin-top: 70px;
     }
-    section#banner-area {
-        margin-top: 135px;
-    }
+
 }
