@@ -514,10 +514,10 @@ html {
         margin-top: 70px;
     }
     section#banner-area {
-        margin-top: 135px;
+        margin-top: 50px;
     }
-    #livesearch{
-        margin-top: 40px;
+    #main-site{
+        margin-top: 50px;
     }
 }
 @media screen and (max-width:492px) {
@@ -534,5 +534,10 @@ html {
     }
     #main-site{
         margin-top: 135px;
+    }
+}
+@media screen and (max-width:437px) {
+    #livesearch{
+        margin-top: 40px;
     }
 }
